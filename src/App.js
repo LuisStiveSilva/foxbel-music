@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import Main from "./components/Main/Main";
+import Menu from "./components/Menu/Menu";
+import Player from "./components/Player/Player";
+
+const Container = styled.div`
+  position: relative;
+`;
 
 function App() {
+  const [data, setData] = useState([]);
+  const [selectedSong, setSelectedSong] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (selectedSong) {
+      document.getElementById("player").pause();
+      document.getElementById("player").play();
+      setIsPlaying(true);
+    }
+  }, [selectedSong]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu />
+      <Main data={data} setData={setData} setSelectedSong={setSelectedSong} />
+      <Player
+        selectedSong={selectedSong}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
+      <audio id="player" src={selectedSong?.preview}></audio>
+    </>
   );
 }
 
