@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaPlay, FaEllipsisV } from "react-icons/fa";
 import { white, redPrincipal, gray1 } from '../../../utils/colors'
+import { mobile, tablet } from '../../../utils/breakpoints';
 
 const Title = styled.h3`
     color: ${redPrincipal};
@@ -12,6 +13,9 @@ const ResultsContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    @media (max-width: ${tablet}) {
+        justify-content: center;
+    }
 `
 const ItemContainer = styled.div`
     display: flex;
@@ -31,6 +35,11 @@ const ItemImage = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    @media (max-width: ${mobile}) {
+        justify-content: center;
+        width: 130px;
+        height: 130px;
+    }
 `
 const Album = styled.p`
     font-size: 14px;
@@ -38,6 +47,9 @@ const Album = styled.p`
     margin: 8px 0 0;
     word-break: break-word;
     width: 160px;
+    @media (max-width: ${mobile}) {
+        width: 130px;
+    }
 `
 const Artist = styled.p`
     color: ${gray1};
@@ -45,6 +57,9 @@ const Artist = styled.p`
     margin: 0;
     word-break: break-word;
     width: 160px;
+    @media (max-width: ${mobile}) {
+        width: 130px;
+    }
 `
 const PlayButton = styled(FaPlay)`
     color: ${white};

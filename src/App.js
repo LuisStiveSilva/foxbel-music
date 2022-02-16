@@ -4,8 +4,8 @@ import Main from "./components/Main/Main";
 import Menu from "./components/Menu/Menu";
 import Player from "./components/Player/Player";
 
-const Container = styled.div`
-  position: relative;
+const ResponsiveMenuContainer = styled.div`
+  display: none;
 `;
 
 function App() {

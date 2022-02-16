@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../../../utils/breakpoints'
 import { white } from '../../../utils/colors'
 
 const Container = styled.div`
     width: 330px;
     display: flex;
     justify-content: flex-start;
+    @media (max-width: ${mobile}) {
+        width: 100%;
+    }
 `
 const AlbumImage = styled.img`
     height: 100px;

@@ -4,18 +4,26 @@ import Header from './components/Header'
 import Results from './components/Results'
 import Searchbar from './components/Searchbar'
 import User from './components/User'
-
+import { desktop, tablet, mobile } from '../../utils/breakpoints'
 
 const Container = styled.div`
     margin-left: 330px;
     padding: 30px 40px;
     margin-bottom: 100px;
+    @media (max-width: ${tablet}) {
+        margin-left: 0px;
+        padding: 20px 30px;
+    }
+    @media (max-width: ${mobile}) {
+        margin-bottom: 200px;
+    }
 `
 
 const TopSide = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 `
 
 export default function Main({ data, setData, setSelectedSong }) {
@@ -23,7 +31,7 @@ export default function Main({ data, setData, setSelectedSong }) {
     return (
         <Container>
             {Boolean(loading) ?
-                <p>Cargando...</p>
+                <p style={{ paddingLeft: "30px" }}>Cargando...</p>
                 :
                 <>
                     <TopSide>

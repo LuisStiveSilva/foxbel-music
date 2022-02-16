@@ -12,6 +12,7 @@ const UserContainer = styled.div`
 const UserIcon = styled(FaUser)`
     color: ${redPrincipal};
     margin-right: 12px;
+    margin-left: 12px;
     font-size: 14px;
 `
 const UserName = styled.span`

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaPlay, FaEllipsisH } from "react-icons/fa";
 import { white, redPrincipal, gray1 } from "../../../utils/colors"
+import { desktop, mobile } from '../../../utils/breakpoints';
 
 const Container = styled.div`
     display: flex;
@@ -10,11 +11,23 @@ const Container = styled.div`
     height: 250px;
     margin: 40px 0;
     width: 100%;
+    @media (max-width: ${desktop}) {
+        flex-direction: column;
+        height: auto
+    }
 `
 const AlbumContainer = styled.div`
     height: 250px;
     width: 250px;
     position: relative;
+    @media (max-width: ${desktop}) {
+        width: 350px;
+        height: 350px;
+    }
+    @media (max-width: ${mobile}) {
+        width: 300px;
+        height: 300px;
+    }
 `
 const AlbumImage = styled.img`
     width: 100%;
@@ -43,6 +56,12 @@ const TextContainer = styled.div`
     position: relative;
     width: calc(100% - 250px);
     z-index: 10;
+    @media (max-width: ${desktop}) {
+        width: 350px;
+    }
+    @media (max-width: ${mobile}) {
+        width: 300px;
+    }
 `
 const BackgroundFilter = styled.div`
     background: pink;
@@ -68,11 +87,6 @@ const Ranking = styled.span`
     font-size: 12px;
     font-weight: 700
 `
-const Description = styled.p`
-    font-size: 12px;
-    line-height: 20px;
-    margin-top: 20px;
-`
 const ButtonContainer = styled.div`
     bottom: 20px;
     left: 32px;
@@ -94,6 +108,10 @@ const PlayButton = styled.button`
     &:hover{
         cursor: pointer;
     }
+    @media (max-width: ${desktop}) {
+        width: 92px;
+        padding: 6px 10px
+    }
 `
 const FollowButton = styled.button`
     background: transparent;
@@ -107,6 +125,10 @@ const FollowButton = styled.button`
     width: 117px;
     &:hover{
         cursor: pointer;
+    }
+    @media (max-width: ${desktop}) {
+        width: 92px;
+        padding: 6px 10px
     }
 `
 const EllipsisButton = styled(FaEllipsisH)`

@@ -2,19 +2,27 @@ import React from 'react'
 import styled from 'styled-components'
 import { white, lightRed } from '../../../utils/colors';
 import { FaPlay, FaFastBackward, FaFastForward, FaPause } from "react-icons/fa";
+import { mobile } from '../../../utils/breakpoints';
 
 const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;    
     color: ${white};
-    font-size: 18px
+    font-size: 18px;
+    padding: 0 10px;
+    @media (max-width: ${mobile}) {
+        position:absolute;
+        left: 10px;
+        bottom: 20px;
+    }
 `
 
 const BackSong = styled(FaFastBackward)`
     &:hover{
         cursor:pointer
-    }
+    };
+    
 `
 const NextSong = styled(FaFastForward)`
     &:hover{
@@ -40,7 +48,7 @@ const PlaySong = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20px
+    margin: 0 20px;
 `
 
 export default function Controls({ isPlaying, setIsPlaying }) {

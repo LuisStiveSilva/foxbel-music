@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FaSearch } from "react-icons/fa";
 import { gray1, softGray } from "../../../utils/colors"
 import { searchRequest } from '../../../utils/requests';
+import { tablet } from '../../../utils/breakpoints';
 
 const InputContainer = styled.div`
     border: 1px solid ${gray1};
@@ -13,6 +14,9 @@ const InputContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0px 16px;
+    @media (max-width: ${tablet}) {
+        margin-left: 40px;
+    }
 `
 const Input = styled.input`
     border: none;
