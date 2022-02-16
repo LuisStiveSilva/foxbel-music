@@ -13,8 +13,6 @@ const Container = styled.div`
     @media (max-width: ${tablet}) {
         margin-left: 0px;
         padding: 20px 30px;
-    }
-    @media (max-width: ${mobile}) {
         margin-bottom: 200px;
     }
 `

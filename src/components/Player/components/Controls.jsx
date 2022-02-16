@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { white, lightRed } from '../../../utils/colors';
 import { FaPlay, FaFastBackward, FaFastForward, FaPause } from "react-icons/fa";
-import { mobile } from '../../../utils/breakpoints';
+import { mobile, tablet } from '../../../utils/breakpoints';
 
 const Container = styled.div`
     display: flex;
@@ -11,7 +11,7 @@ const Container = styled.div`
     color: ${white};
     font-size: 18px;
     padding: 0 10px;
-    @media (max-width: ${mobile}) {
+    @media (max-width: ${tablet}) {
         position:absolute;
         left: 10px;
         bottom: 20px;

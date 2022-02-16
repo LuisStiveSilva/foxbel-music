@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { mobile } from '../../utils/breakpoints'
+import { mobile, tablet } from '../../utils/breakpoints'
 import { redPlayer } from '../../utils/colors'
 import Controls from './components/Controls'
 import Song from './components/Song'
@@ -16,7 +16,7 @@ const PlayerContainer = styled.div`
     left: 0;
     display: flex;
     justify-content: space-between;
-    @media (max-width: ${mobile}) {
+    @media (max-width: ${tablet}) {
         height: 200px;
         flex-direction: column;
         justify-content: space-between;

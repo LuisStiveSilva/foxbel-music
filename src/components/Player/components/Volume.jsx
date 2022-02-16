@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { white } from '../../../utils/colors';
 import { FaVolumeOff, FaVolumeDown, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import { mobile } from '../../../utils/breakpoints';
+import { mobile, tablet } from '../../../utils/breakpoints';
 
 
 const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;       
-    @media (max-width: ${mobile}) {
+    @media (max-width: ${tablet}) {
         position:absolute;
         right: 0;
         bottom: 30px;
