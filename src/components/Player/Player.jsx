@@ -17,7 +17,7 @@ const PlayerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     @media (max-width: ${tablet}) {
-        height: 200px;
+        height: ${props => props.selectedSong && "200px"};
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -26,7 +26,7 @@ const PlayerContainer = styled.div`
 
 export default function Player({ selectedSong, isPlaying, setIsPlaying }) {
     return (
-        <PlayerContainer>
+        <PlayerContainer selectedSong={Boolean(selectedSong)}>
             <Song selectedSong={selectedSong} />
             <Controls
                 selectedSong={selectedSong}

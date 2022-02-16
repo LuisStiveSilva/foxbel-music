@@ -24,7 +24,12 @@ function App() {
   return (
     <>
       <Menu />
-      <Main data={data} setData={setData} setSelectedSong={setSelectedSong} />
+      <Main
+        data={data}
+        setData={setData}
+        setSelectedSong={setSelectedSong}
+        selectedSong={selectedSong}
+      />
       <Player
         selectedSong={selectedSong}
         isPlaying={isPlaying}

@@ -51,20 +51,28 @@ const PlaySong = styled.div`
     margin: 0 20px;
 `
 
-export default function Controls({ isPlaying, setIsPlaying }) {
+export default function Controls({ isPlaying, setIsPlaying, selectedSong }) {
     return (
         <Container>
             <BackSong />
-            <PlaySong >
+            <PlaySong>
                 {isPlaying ?
-                    <PauseSong onClick={() => {
-                        setIsPlaying(false)
-                        document.getElementById('player').pause()
-                    }} /> :
-                    <PlaySongIcon onClick={() => {
-                        setIsPlaying(true)
-                        document.getElementById('player').play()
-                    }} />
+                    <PauseSong
+                        onClick={() => {
+                            if (Boolean(selectedSong)) {
+                                setIsPlaying(false)
+                                document.getElementById('player').pause()
+                            }
+                        }}
+                    /> :
+                    <PlaySongIcon
+                        onClick={() => {
+                            if (Boolean(selectedSong)) {
+                                setIsPlaying(true)
+                                document.getElementById('player').play()
+                            }
+                        }}
+                    />
                 }
             </PlaySong>
             <NextSong />

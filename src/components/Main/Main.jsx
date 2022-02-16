@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Results from './components/Results'
 import Searchbar from './components/Searchbar'
 import User from './components/User'
-import { desktop, tablet, mobile } from '../../utils/breakpoints'
+import { tablet } from '../../utils/breakpoints'
 
 const Container = styled.div`
     margin-left: 330px;
@@ -13,7 +13,7 @@ const Container = styled.div`
     @media (max-width: ${tablet}) {
         margin-left: 0px;
         padding: 20px 30px;
-        margin-bottom: 200px;
+        margin-bottom: ${props => props.mobile && "200px"};
     }
 `
 
@@ -24,10 +24,10 @@ const TopSide = styled.div`
     
 `
 
-export default function Main({ data, setData, setSelectedSong }) {
+export default function Main({ data, setData, setSelectedSong, selectedSong }) {
     const [loading, setLoading] = useState(false)
     return (
-        <Container>
+        <Container mobile={Boolean(selectedSong)} >
             {Boolean(loading) ?
                 <p style={{ paddingLeft: "30px" }}>Cargando...</p>
                 :
